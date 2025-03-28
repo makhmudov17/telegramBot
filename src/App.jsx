@@ -9,7 +9,8 @@ const App = () => {
   const selectCourse = (num) => {
     let newArr = [...selectedCourse];
     const newCourse = courses.find((item, index) => index === num);
-    if (!selectedCourse.some((course) => course.title === newCourse.title)) {
+    let buyItem=selectedCourse.some((course) => course.title === newCourse.title);
+    if (!buyItem) {
       newArr.push(newCourse);
       setSelectedCourse(newArr);
     }
